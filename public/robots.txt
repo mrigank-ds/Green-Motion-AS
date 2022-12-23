@@ -1,3 +1,3 @@
-Sitemap: https://dimly-giant-python.sbx.pgsdemo.com/sitemap.xml
+Sitemap: https://staging-sociably--missing--clam-sbx-pgsdemo-com.sbx.preview.pagescdn.com/sitemap.xml
 User-agent: *
 Disallow: /
