@@ -4,7 +4,7 @@ import { useComposedCssClasses } from '../../hooks/useComposedCssClasses';
 import { CardProps } from '../../models/cardComponent';
 import { useEffect, useState } from "react";
 import '../../sass/style.css';
-import RtfConverter from "@yext/rtf-converter";
+// import RtfConverter from "@yext/rtf-converter";
 
 
 
@@ -60,7 +60,7 @@ export interface TrainerCardCssClasses {
 const builtInCssClasses: TrainerCardCssClasses = {
   container: 'flex flex-col p-4 shadow-sm my-2 align-items-center',
   descriptionContainer: 'w-full text-sm font-heading ',
-  name: 'text-xl font-medium',
+  name: 'text-2xl font-bold',
   ctaButton: 'flex rounded-md mt-4 justify-center',
   ctaButtonText: 'text-base px-3 py-3 sm:py-0',
 };
@@ -134,7 +134,10 @@ export function FaqCard(props: TrainerCardProps): JSX.Element {
       <div className={'faq-block md:col-span-3 ' + trainer.id + ' ' + faqClass} >
         <div className='faq-title' onClick={(e) => isShowContent(e, trainer.id)} >{renderName(trainer.name)}</div>
         <div className={cssClasses.ctaButton + ' faq-content'}>
-          <div dangerouslySetInnerHTML={{ __html: RtfConverter.toHTML(trainer.answer) }} />
+          {/* <div dangerouslySetInnerHTML={{ __html: RtfConverter.toHTML(trainer.answer) }} /> */}
+          <div className='FaqAnswers'>
+            {trainer.answer}
+          </div>
           <div className='flex flex-row mr-5'>
             {MappedPricing}
           </div>

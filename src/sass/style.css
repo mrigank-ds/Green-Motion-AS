@@ -78,6 +78,13 @@ background-color: #809c23
 .faq-content{
   @apply hidden pb-4
 }
+
+.FaqAnswers{
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+/* font-size: 20px;
+margin-bottom: 20px; */
 .faq-block.opened .faq-content{
   @apply block
 }
@@ -94,7 +101,8 @@ background-color: #809c23
 }
 
 .VechileDetails{
-  margin-right: 70px;
+  margin-right: 170px;
+  margin-left: 10px;
 }
 
 iframe{
