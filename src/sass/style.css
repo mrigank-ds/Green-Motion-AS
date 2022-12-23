@@ -93,6 +93,9 @@ background-color: #809c23
   @apply bg-blue hover:bg-blackLight capitalize text-white px-5 py-2 inline-block rounded mt-3
 }
 
+.VechileDetails{
+  margin-right: 70px;
+}
 
 iframe{
   @apply hidden
