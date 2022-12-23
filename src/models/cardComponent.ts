@@ -1,9 +1,10 @@
 import { Result } from '@yext/answers-headless-react';
-import { FaqCard } from '../components/cards/FaqCards';
+import { StandardCardConfig } from '../components/cards/StandardCard';
+
 /**
  * The config types for each supported card.
  */
-export type CardConfigTypes = FaqCard;
+export type CardConfigTypes = StandardCardConfig;
 
 /**
  * CardComponent and the corresponding config options
