@@ -1,0 +1,3 @@
+Sitemap: https://dimly-giant-python.sbx.pgsdemo.com/sitemap.xml
+User-agent: *
+Disallow: /

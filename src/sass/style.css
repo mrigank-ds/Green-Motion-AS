@@ -1,0 +1,96 @@
+
+
+body{
+  @apply bg-white
+}
+
+.search-nav{
+  @apply py-5 bg-white
+}
+.search-nav > div{
+  @apply max-w-5xl mx-auto
+}
+.search-nav input{
+  @apply bg-white
+}
+
+.answer-nav{
+  @apply flex justify-center items-center bg-blue; 
+}
+.answer-nav a{
+  @apply px-5
+}
+
+.section-header{
+  @apply m-0
+}
+.section-header svg path{
+  @apply  stroke-current
+}
+
+.map-section{
+  @apply mb-2.5
+}
+
+.buttons{
+  @apply flex flex-wrap
+}
+.buttons a{
+  @apply w-full mt-0
+}
+.buttons a + a{
+  @apply mt-2.5
+}
+
+.location-result.result{
+  @apply flex flex-row justify-between items-center md:col-span-3 pb-4 border-b border-blackLight border-opacity-10 
+}
+.location-result.result.location-result.result:last-child{
+  @apply border-b-0 pb-0
+}
+.single-line{
+  min-height: 1.25rem;
+}
+
+.faq-block{
+  @apply  border-b border-blackLight border-opacity-10
+}
+.faq-block:last-child{
+  @apply border-b-0
+}
+.faq-title{
+  @apply font-semibold py-2.5 relative cursor-pointer
+}
+.faq-title:after{
+  content: '';
+  @apply absolute top-3.5 right-0.5 border-b-2 border-r-2 border-blue transform rotate-45 w-3 h-3 transition-all duration-300
+}
+.faq-block.opened .faq-title:after{
+  transform: rotate(-135deg);
+  @apply top-5
+}
+.faq-content{
+  @apply hidden pb-4
+}
+.faq-block.opened .faq-content{
+  @apply block
+}
+.faq-content a{
+  @apply bg-blue text-white px-5 py-2 inline-block rounded mt-3 capitalize
+}
+
+
+.imageContainer{
+  padding-top: 57%;
+}
+.ctaBtn{
+  @apply bg-blue hover:bg-blackLight capitalize text-white px-5 py-2 inline-block rounded mt-3
+}
+
+
+iframe{
+  @apply hidden
+}
+
+
+
