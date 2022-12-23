@@ -15,7 +15,13 @@ body{
 }
 
 .answer-nav{
-  @apply flex justify-center items-center bg-blue; 
+
+background-color: #809c23
+}
+
+/* [#a9d301] */
+.answer-nav{
+  @apply flex justify-center items-center; 
 }
 .answer-nav a{
   @apply px-5
