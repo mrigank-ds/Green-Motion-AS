@@ -77,8 +77,10 @@ export default function VerticalResults(props: VerticalResultsProps): JSX.Elemen
   const isLoading = useAnswersState(state => state.searchStatus.isLoading);
 
   let results = verticalResults;
+  console.log(displayAllOnNoResults,"displayAllOnNoResults");
   let resultsCount = verticalResultsCount;
   if (verticalResults.length === 0 && displayAllOnNoResults) {
+    <h1>No results were found for your query. Showing all instead</h1>
     results = allResultsForVertical;
     resultsCount = allResultsCountForVertical;
   }

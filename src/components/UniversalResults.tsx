@@ -47,10 +47,20 @@ export default function UniversalResults({
   const cssClasses = useComposedCssClasses(builtInCssClasses, customCssClasses, cssCompositionMethod);
   const resultsFromAllVerticals = useAnswersState(state => state?.universal?.verticals) || [];
   const isLoading = useAnswersState(state => state.searchStatus.isLoading);
+  if (isLoading === false) {
+    if (resultsFromAllVerticals.length === 0) {
+      return (
+        <div>
+          <h1>No results found for this Query</h1>
+          <h4>Showing other Verticals insteats</h4>
+        </div>
+      );
+    }
 
-  if (resultsFromAllVerticals.length === 0) {
-    return null;
   }
+  // if (resultsFromAllVerticals.length === 0) {
+  //   return null;
+  // }
 
   const resultsClassNames = classNames(cssClasses.container, {
     [cssClasses.results___loading ?? '']: isLoading
