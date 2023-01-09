@@ -4,7 +4,7 @@ import { useComposedCssClasses } from '../../hooks/useComposedCssClasses';
 import { CardProps } from '../../models/cardComponent';
 import { useEffect, useState } from "react";
 import '../../sass/style.css';
-// import RtfConverter from "@yext/rtf-converter";
+import RtfConverter from "@yext/rtf-converter";
 
 
 
@@ -71,27 +71,8 @@ export function FaqCard(props: TrainerCardProps): JSX.Element {
   const trainer = result.rawData as unknown as TrainerData;
   const FaqVertical: any = result.rawData;
   const FaqLandingPage = FaqVertical.landingPageUrl ? FaqVertical.landingPageUrl : '#';
-
-  const pricing  = FaqVertical.c_pricing;
-  // console.log(pricing,"pricing");
-
-  var MappedPricing = pricing.map((res:any)=>{
-    console.log(res,"res");
-    var Newpackage : any  = res.pACKAGE ? res.pACKAGE : 'Package to be filled';
-    var VechileGroup = res.vehicleGroup ? res.vehicleGroup : 'Vechile Group to be filled';
-    var NewAmout = res.amount ? res.amount : 'Amount here'; 
-    var NewPrice = res.price ? res.price : 'Price here';
-      return(
-        <>
-          <div className='VechileDetails'>
-            <p>Vechile Group :</p> <p>{VechileGroup}</p>
-            <p>Package :</p> <p>{Newpackage}</p>
-            <p>Amount :</p> <p>{NewAmout}</p>
-            <p>Price :</p> <p>{NewPrice}</p>
-          </div>
-        </>
-      )
-  })
+  const FaqAnswers = FaqVertical.c_answers ? FaqVertical.c_answers : FaqVertical.answer ;
+  const NewAnswers = FaqAnswers.toString();
   //   const screenSize = useContext(ResponsiveContext);/
   const [faqClass, setFaqClass] = useState("");
 
@@ -134,13 +115,13 @@ export function FaqCard(props: TrainerCardProps): JSX.Element {
       <div className={'faq-block md:col-span-3 ' + trainer.id + ' ' + faqClass} >
         <div className='faq-title' onClick={(e) => isShowContent(e, trainer.id)} >{renderName(trainer.name)}</div>
         <div className={cssClasses.ctaButton + ' faq-content'}>
-          {/* <div dangerouslySetInnerHTML={{ __html: RtfConverter.toHTML(trainer.answer) }} /> */}
-          <div className='FaqAnswers'>
+          <div dangerouslySetInnerHTML={{ __html: RtfConverter.toHTML(NewAnswers) }} />
+          {/* <div className='FaqAnswers'>
             {trainer.answer}
-          </div>
-          <div className='flex flex-row mr-5'>
+          </div> */}
+          {/* <div className='flex flex-row mr-5'>
             {MappedPricing}
-          </div>
+          </div> */}
           <a href={FaqLandingPage}>
             <div className={cssClasses.ctaButtonText}>Read more</div>
           </a>
