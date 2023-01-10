@@ -18,7 +18,7 @@
     "@typescript-eslint/parser": "^4.5.0",
     "@yext/answers-headless-react": "^1.0.0",
     "@yext/answers-search-ui": "^1.14.0",
-    "@yext/rtf-converter": "^1.7.1",
+    "@yext/rtf-converter": "^1.5.1",
     "@yext/search-ui-react": "^1.0.0-beta.269",
     "autoprefixer": "^9.8.8",
     "babel-eslint": "^10.1.0",
