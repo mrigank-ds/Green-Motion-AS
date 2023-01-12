@@ -2,7 +2,7 @@ import { FaqCard } from '../components/cards/FaqCards';
 import { LocationCard } from '../components/cards/LocationCard';
 import { VerticalConfig } from '../components/UniversalResults';
 import LocationSection from '../sections/LocationSection';
-
+import { TermsAndConditionCards } from '../components/cards/TermsAndConditionCard';
 
 
 
@@ -25,4 +25,13 @@ export const universalResultsConfig: UniversalResultsConfig = {
       showOrdinal: false
     }
   },
+  terms_and_condition: {
+    label: 'Terms & Conditions',
+    viewAllButton: true,
+    cardConfig: {
+      CardComponent: TermsAndConditionCards,
+      showOrdinal: false
+    }
+  }
+  // terms_and_condition
 }

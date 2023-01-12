@@ -2,6 +2,7 @@ import UniversalSearchPage from '../pages/UniversalSearchPage';
 import FAQsPage from '../pages/FAQsPage';
 import { universalResultsConfig } from './universalResultsConfig';
 import LocationsPage from '../pages/LocationsPage';
+import TermsAndConditionPage from '../pages/TermsAndConditionPages';
 
 
 
@@ -23,4 +24,8 @@ export const routeConfig = [
     path: '/locations',
     page: <LocationsPage verticalKey="locations" />
   },
+  {
+    path: '/terms_and_condition',
+    page: <TermsAndConditionPage verticalKey="terms_and_condition" />
+  }
 ];
