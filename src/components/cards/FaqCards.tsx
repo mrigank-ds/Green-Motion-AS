@@ -5,7 +5,7 @@ import { CardProps } from '../../models/cardComponent';
 import { useEffect, useState } from "react";
 import '../../sass/style.css';
 // import RtfConverter from "@yext/rtf-converter";
-import RtfConverter from "../rtf-converter.js" ; 
+// import RtfConverter from "../rtf-converter.js" ; 
 
 
 //prettier-ignore
@@ -71,8 +71,8 @@ export function FaqCard(props: TrainerCardProps): JSX.Element {
   const trainer = result.rawData as unknown as TrainerData;
   const FaqVertical: any = result.rawData;
   const FaqLandingPage = FaqVertical.landingPageUrl ? FaqVertical.landingPageUrl : '#';
-  const FaqAnswers : any = FaqVertical.c_answers ? FaqVertical.c_answers : FaqVertical.answer ;
-  const NewAnswers : string = FaqAnswers.toString();
+  const FaqAnswers  = FaqVertical.c_answers ? FaqVertical.c_answers : 'FaqVertical.answer' ;
+  const NewAnswers  = FaqAnswers.toString();
   //   const screenSize = useContext(ResponsiveContext);/
   const [faqClass, setFaqClass] = useState("");
 
@@ -127,10 +127,10 @@ export function FaqCard(props: TrainerCardProps): JSX.Element {
       <div className={'faq-block md:col-span-3 ' + trainer.id + ' ' + faqClass} >
         <div className='faq-title' onClick={(e) => isShowContent(e, trainer.id)} >{renderName(trainer.name)}</div>
         <div className={cssClasses.ctaButton + ' faq-content'}>
-          <div dangerouslySetInnerHTML={{ __html: RtfConverter.toHTML(NewAnswers) }} />
-          {/* <div>
+          {/* <div dangerouslySetInnerHTML={{ __html: RtfConverter.toHTML(NewAnswers) }} /> */}
+          <div>
             {NewAnswers}
-          </div> */}
+          </div>
           <a href={FaqLandingPage}>
             <div className={cssClasses.ctaButtonText}>Read more</div>
           </a>

@@ -52,7 +52,7 @@ export default function UniversalResults({
       return (
         <div>
           <h1>No results found for this Query</h1>
-          <h4>Showing other Verticals insteats</h4>
+          {/* <h4>Showing other Verticals insteats</h4> */}
         </div>
       );
     }

@@ -29,31 +29,33 @@ const builtInCssClasses: DirectAnswerCssClasses = {
   featuredSnippetTitle: 'mb-4 font-bold text-xl text-gray-800',
   content: '',
   fieldValueDescription: 'font-bold text-xl text-gray-800',
-  featuredSnippetDescription: '',
+  featuredSnippetDescription: 'text-blue-600',
   viewDetailsLink: 'text-blue-600',
   viewDetailsLinkContainer: 'pt-4 text-gray-500',
-  highlighted: 'bg-blue-100'
+  highlighted: 'text-blue'
 };
 
 export default function DirectAnswer(props: DirectAnswerProps): JSX.Element | null {
   const directAnswerResult = useAnswersState(state => state.directAnswer.result);
+  console.log(directAnswerResult, "directAnswerResult");
   const isLoading = useAnswersState(state => state.searchStatus.isLoading || false);
   const composedCssClasses = useComposedCssClasses(builtInCssClasses, props.customCssClasses, props.cssCompositionMethod);
   if (!directAnswerResult) {
     return null;
   }
   const cssClasses = getCssClassesForAnswerType(composedCssClasses, directAnswerResult.type);
-  
+
   const title = directAnswerResult.type === DirectAnswerType.FeaturedSnippet
     ? directAnswerResult.value
     : `${directAnswerResult.entityName} / ${directAnswerResult.fieldName}`
-  const description: ReactNode = directAnswerResult.type === DirectAnswerType.FeaturedSnippet 
+  const description: ReactNode = directAnswerResult.type === DirectAnswerType.FeaturedSnippet
     ? renderHighlightedValue(directAnswerResult.snippet, { highlighted: cssClasses.highlighted })
     : directAnswerResult.value;
   const link = directAnswerResult.relatedResult.link;
 
   function getLinkText(directAnswerResult: DirectAnswerModel) {
     const isSnippet = directAnswerResult.type === DirectAnswerType.FeaturedSnippet;
+    console.log(isSnippet, "isSnippet");
     const name = directAnswerResult.relatedResult.name;
 
     return <>
@@ -77,7 +79,7 @@ export default function DirectAnswer(props: DirectAnswerProps): JSX.Element | nu
       {title &&
         <div className={cssClasses.title}>{title}</div>}
       <div className={cssClasses.content}>
-        <div className={cssClasses.description}>{description}</div>
+        <div className={cssClasses.highlighted}>{description}</div>
         {link && getLinkText(directAnswerResult)}
       </div>
     </div>
