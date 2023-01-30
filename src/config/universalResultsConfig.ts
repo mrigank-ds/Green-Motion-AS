@@ -9,13 +9,13 @@ import { TermsAndConditionCards } from '../components/cards/TermsAndConditionCar
 export type UniversalResultsConfig = Record<string, VerticalConfig>;
 
 export const universalResultsConfig: UniversalResultsConfig = {
-  faqs: {
-    label: 'FAQs',
-    viewAllButton: true,
-    cardConfig: {
-      CardComponent: FaqCard,
-    }
-  },
+  // faqs: {
+  //   label: 'FAQs',
+  //   viewAllButton: true,
+  //   cardConfig: {
+  //     CardComponent: FaqCard,
+  //   }
+  // },
   locations: {
     SectionComponent: LocationSection,
     label: 'Locations',

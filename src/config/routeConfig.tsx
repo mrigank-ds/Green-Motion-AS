@@ -16,10 +16,10 @@ export const routeConfig = [
     exact: true,
     page: <UniversalSearchPage universalResultsConfig={universalResultsConfig} />
   },
-  {
-    path: '/faqs',
-    page: <FAQsPage verticalKey='faqs'/>
-  },
+  // {
+  //   path: '/faqs',
+  //   page: <FAQsPage verticalKey='faqs'/>
+  // },
   {
     path: '/locations',
     page: <LocationsPage verticalKey="locations" />

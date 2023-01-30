@@ -70,7 +70,8 @@ export function TermsAndConditionCards(props: TrainerCardProps): JSX.Element {
   const { result } = props;
   const trainer = result.rawData as unknown as TrainerData;
   const FaqVertical: any = result.rawData;
-  const Conditions : any = FaqVertical.c_conditions ;
+  const Conditions : any = FaqVertical.c_extraField ? FaqVertical.c_extraField : FaqVertical.c_conditions ;
+  console.log(FaqVertical.c_extraField,"FaqVertical");
   // const FaqLandingPage = FaqVertical.landingPageUrl ? FaqVertical.landingPageUrl : '#';
   // const FaqAnswers  = FaqVertical.c_answers ? FaqVertical.c_answers : 'FaqVertical.answer' ;
   // const NewAnswers  = FaqAnswers.toString();
@@ -128,9 +129,9 @@ export function TermsAndConditionCards(props: TrainerCardProps): JSX.Element {
       <div className={'faq-block md:col-span-3 ' + trainer.id + ' ' + faqClass} >
         <div className='faq-title' onClick={(e) => isShowContent(e, trainer.id)} >{renderName(trainer.name)}</div>
         <div className={cssClasses.ctaButton + ' faq-content'}>
-          {/* <div dangerouslySetInnerHTML={{ __html: RtfConverter.toHTML(NewAnswers) }} /> */}
+          <div dangerouslySetInnerHTML={{ __html: (Conditions) }} />
           <div>
-            {Conditions}
+            {/* {Conditions} */}
           </div>
           {/* <a href={FaqLandingPage}>
             <div className={cssClasses.ctaButtonText}>Read more</div>
