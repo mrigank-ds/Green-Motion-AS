@@ -33,5 +33,5 @@ export const universalResultsConfig: UniversalResultsConfig = {
       showOrdinal: false
     }
   }
-  // terms_and_condition
+  
 }

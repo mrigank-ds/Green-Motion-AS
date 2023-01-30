@@ -79,7 +79,9 @@ export default function DirectAnswer(props: DirectAnswerProps): JSX.Element | nu
       {title &&
         <div className={cssClasses.title}>{title}</div>}
       <div className={cssClasses.content}>
-        <div className={cssClasses.highlighted}>{description}</div>
+        <div className={cssClasses.highlighted}>{description}
+        <br></br><a href='#'>Read More</a>
+        </div>
         {link && getLinkText(directAnswerResult)}
       </div>
     </div>
