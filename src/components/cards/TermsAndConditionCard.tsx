@@ -71,7 +71,8 @@ export function TermsAndConditionCards(props: TrainerCardProps): JSX.Element {
   const trainer = result.rawData as unknown as TrainerData;
   const FaqVertical: any = result.rawData;
   const Conditions : any = FaqVertical.c_extraField ? FaqVertical.c_extraField : FaqVertical.c_conditions ;
-  console.log(FaqVertical.c_extraField,"FaqVertical");
+  
+  // console.log(FaqVertical,"FaqVertical");
   // const FaqLandingPage = FaqVertical.landingPageUrl ? FaqVertical.landingPageUrl : '#';
   // const FaqAnswers  = FaqVertical.c_answers ? FaqVertical.c_answers : 'FaqVertical.answer' ;
   // const NewAnswers  = FaqAnswers.toString();

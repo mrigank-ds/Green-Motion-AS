@@ -46,12 +46,13 @@ export default function DirectAnswer(props: DirectAnswerProps): JSX.Element | nu
   const cssClasses = getCssClassesForAnswerType(composedCssClasses, directAnswerResult.type);
 
   const title = directAnswerResult.type === DirectAnswerType.FeaturedSnippet
-    ? directAnswerResult.value
+    ? directAnswerResult.relatedResult.name
     : `${directAnswerResult.entityName} / ${directAnswerResult.fieldName}`
-  const description: ReactNode = directAnswerResult.type === DirectAnswerType.FeaturedSnippet
+  const description: any  = directAnswerResult.type === DirectAnswerType.FeaturedSnippet
     ? renderHighlightedValue(directAnswerResult.snippet, { highlighted: cssClasses.highlighted })
     : directAnswerResult.value;
   const link = directAnswerResult.relatedResult.link;
+  console.log(title,"Title");
 
   function getLinkText(directAnswerResult: DirectAnswerModel) {
     const isSnippet = directAnswerResult.type === DirectAnswerType.FeaturedSnippet;
@@ -74,14 +75,17 @@ export default function DirectAnswer(props: DirectAnswerProps): JSX.Element | nu
     [cssClasses.container___loading ?? '']: isLoading
   });
 
+  console.log(description.props.children,"description");
+  let NewDEscription = description.props.children;
   return (
     <div className={containerCssClasses}>
       {title &&
         <div className={cssClasses.title}>{title}</div>}
       <div className={cssClasses.content}>
-        <div className={cssClasses.highlighted}>{description}
-        <br></br><a href='#'>Read More</a>
-        </div>
+        <div dangerouslySetInnerHTML={{ __html: (NewDEscription) }} />
+        {/* <div className={cssClasses.highlighted}>{description} */}
+          <br></br><a href='#'>Read More</a>
+        {/* </div> */}
         {link && getLinkText(directAnswerResult)}
       </div>
     </div>

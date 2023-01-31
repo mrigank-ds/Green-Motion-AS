@@ -105,7 +105,7 @@ export default function MapGoogle(): JSX.Element {
   });
   
   const options = {imagePath:"https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m"};
-	const MarkerIcon : any ="https://www.prezzorestaurants.co.uk/Resources/favicon.ico";	
+	const MarkerIcon : any = PinIcon;	
   
   const pinStyles = {
     fill: "#000", //default google red
